@@ -44,7 +44,7 @@ const header = () => {
   
   <div className="hidden lg:flex lg:gap-x-12">
     
-    <Link to='/' className={`text-sm font-semibold leading-6 transition-all  ${currentPath == '/' ? 'text-blue-600' : 'text-gray-900 scale-105'}`}>Home</Link>
+    <Link to='/vismotors-app' className={`text-sm font-semibold leading-6 transition-all  ${currentPath == '/' ? 'text-blue-600' : 'text-gray-900 scale-105'}`}>Home</Link>
     <Link to='/data-management' className={`text-sm font-semibold transition-all  leading-6 ${currentPath == '/data-management' ? 'text-blue-600 scale-105' : 'text-gray-900'}`}>Data Management</Link>
     <Link to='/research' className={`text-sm font-semibold leading-6 transition-all  ${currentPath == '/research' ? 'text-blue-600 scale-105' : 'text-gray-900'}`}>Research</Link>
     <Link to="/legal-bases" className={`text-sm font-semibold leading-6 transition-all  ${currentPath == '/legal-bases' ? 'text-blue-600 scale-105' : 'text-gray-900'}`}>Legal Bases</Link>

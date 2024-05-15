@@ -7,7 +7,7 @@ const bottomNax = () => {
   const currentPath = location.pathname;
   return (
     <div className="bg-white fixed bottom-0 w-full  border-t border-gray-200 flex">
-      <Link to='/'
+      <Link to='/vismotors-app'
   
         className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/' ? 'text-green-500'  : 'text-gray-500'}  hover:text-green-500`}
       >
