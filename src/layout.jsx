@@ -11,7 +11,7 @@ const layout = () => {
     return (
 
     
-        <div className='h-full w-full left-0 top-0 overflow-auto absolute bg-md-light-surface '>
+        <div className='h-full w-full left-0 top-0 overflow-auto absolute bg-md-light-surface pb-52'>
             <Header />
     
           <main>

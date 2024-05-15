@@ -1,52 +1,64 @@
 import React from "react";
+import { Link } from 'react-router-dom';   
+import { useLocation } from 'react-router-dom';
 
 const bottomNax = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
   return (
-    <div className="bg-white absolute bottom-0 w-full  border-t border-gray-200 flex">
-      <a
-        href="#"
-        className="flex flex-grow items-center justify-center p-2 text-indigo-500 hover:text-indigo-500"
+    <div className="bg-white fixed bottom-0 w-full  border-t border-gray-200 flex">
+      <Link to='/'
+  
+        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/' ? 'text-green-500'  : 'text-gray-500'}  hover:text-green-500`}
       >
         <div className="text-center">
           <span className="block h-8 text-3xl leading-8">
-            <span className="material-symbols-outlined">newsmode</span>
+          <span className="material-symbols-outlined">
+dashboard
+</span>
           </span>
-          <span className="block text-xs leading-none">Today</span>
+          <span className="block text-xs leading-none">Dashboard</span>
         </div>
-      </a>
-      <a
-        href="#"
-        className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"
+      </Link>
+      <Link
+        to='/payment'
+        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/payment' ? 'text-green-500'  : 'text-gray-500'}  hover:text-green-500"`}
       >
         <div className="text-center">
           <span className="block h-8 text-3xl leading-8">
-            <span className="material-symbols-outlined">apps</span>
+          <span className="material-symbols-outlined">
+receipt_long
+</span>
           </span>
-          <span className="block text-xs leading-none">Categories</span>
+          <span className="block text-xs leading-none">Payment History</span>
         </div>
-      </a>
-      <a
-        href="#"
-        className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"
+      </Link>
+      <Link
+        to='/contact'
+        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/contact' ? 'text-green-500'  : 'text-gray-500'} hover:text-green-500`}
       >
         <div className="text-center">
           <span className="block h-8 text-3xl leading-8">
-            <span className="material-symbols-outlined">star</span>
+          <span className="material-symbols-outlined">
+feedback
+</span>
           </span>
-          <span className="block text-xs leading-none">Favorites</span>
+          <span className="block text-xs leading-none">Contact Us</span>
         </div>
-      </a>
-      <a
-        href="#"
-        className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"
+      </Link>
+      <Link
+        to="/link"
+        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/link' ? 'text-green-500'  : 'text-gray-500'} hover:text-green-500`}
       >
         <div className="text-center">
           <span className="block h-8 text-3xl leading-8">
-            <span className="material-symbols-outlined">search</span>
+          <span className="material-symbols-outlined">
+account_circle
+</span>
           </span>
-          <span className="block text-xs leading-none">Search</span>
+          <span className="block text-xs leading-none">Link</span>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };

@@ -2,10 +2,19 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';   
 import { useLocation } from 'react-router-dom';
 
+
+function tabName(currentPath){
+  if(currentPath == '/payment') return "Payment History"
+  if(currentPath == '/contact' )  return "Contact Us"
+  if(currentPath == '/link' )  return "Link"
+  
+  return "DASHBOARD"
+}
 const header = () => {
   const location = useLocation();
   const currentPath = location.pathname;
-const parentRoute = currentPath.split('/').slice(0, 2).join('/');
+      console.log(currentPath)
+  
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     console.log(isOpen);
@@ -14,7 +23,7 @@ const parentRoute = currentPath.split('/').slice(0, 2).join('/');
     return (
       <>
    
-   <header className=" bg-[#37A547] shadow-lg">
+   <header className=" bg-[#48c05a] shadow-lg">
 
 <nav className="mx-auto flex max-w-7xl items-center justify-start p-2 lg:px-8" aria-label="Global">
 <div className="flex ">
@@ -27,10 +36,10 @@ const parentRoute = currentPath.split('/').slice(0, 2).join('/');
   </div>
   <div className="flex lg:flex-1 items-center">
     <a href="#" className="-m-1.5 p-1.5">
-      <span className="sr-only text-white">DASHBOARD</span>
+      <span className="sr-only text-white">{tabName(currentPath)}</span>
       <img className="h-8 w-auto" src="" alt=""/>
     </a>
-    <p className='ml-6  text-white text-md font-semibold leading-6'>DASHBOARD</p>
+    <p className='ml-6  text-white text-md font-semibold leading-6'>{tabName(currentPath)}</p>
   </div>
   
   <div className="hidden lg:flex lg:gap-x-12">
@@ -77,7 +86,7 @@ const parentRoute = currentPath.split('/').slice(0, 2).join('/');
     </div>
   </div>
 </div>
-<div className={`hidden bg-cover ${parentRoute == '/latest-update' ? 'hidden': 'md:block'} bg-center banner-deped`}></div>
+
 </header>
   
     </>
