@@ -7,9 +7,9 @@ const bottomNax = () => {
   const currentPath = location.pathname;
   return (
     <div className="bg-white fixed bottom-0 w-full  border-t border-gray-200 flex">
-      <Link to='/vismotors-app'
+      <Link to='/dashboard'
   
-        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/vismotors-app/' ? 'text-green-500'  : 'text-gray-500'}  hover:text-green-500`}
+        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/dashboard/' ? 'text-green-500'  : 'text-gray-500'}  hover:text-green-500`}
       >
         <div className="text-center">
           <span className="block h-8 text-3xl leading-8">
@@ -56,7 +56,7 @@ feedback
 account_circle
 </span>
           </span>
-          <span className="block text-xs leading-none">Link</span>
+          <span className="block text-xs leading-none">Profile</span>
         </div>
       </Link>
     </div>

@@ -7,15 +7,24 @@ import Layout from './layout.jsx';
 import Payment from './pages/payment/payment.jsx';
 import Contact from './pages/contact/contact.jsx';
 import Link from './pages/link/link.jsx';
+import ProtectedRoute from './ProtectedRoute';
+import Login from './login.jsx'
 import './index.css'
-import { App } from 'konsta/react';
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
-    element: <Layout />,
+    element: <Login/>,
+    path: '/',
+  },
+  {
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     children: [
       {
-        path: '/vismotors-app',
+        path: '/dashboard',
         
         element: <Dashboard />,
 

@@ -1,15 +1,38 @@
 import React from "react";
 import Account from "../../assets/account.svg";
+import { userData ,userProfile, BASE_URL } from "../../utils";
+import apiClient from '../../apiClient'
+import { useQuery } from 'react-query';
+
+const fetchBalance = async (userId) => {
+  try {
+    const response = await apiClient.get(`/balance/${userId}`);
+    return response.data;
+  } catch (error) {
+    // Handle error
+    return [];
+  }
+};
 const dashboard = () => {
+  const userId = userData?.id;
+  const { data, isLoading, error } = useQuery(['fetchBalance', userId], () => fetchBalance(userId));
+  console.log(userData.id);
+  console.log(userData);
+  if(isLoading){
+    return <div>Loading....</div>
+  }
   return (
+
     <div className="">
-      <div className="bg-gradient-to-r from-green-500 to-green-400 p-4">
+             {data.map((transaction, index) => (
+      <div key={index} className="bg-gradient-to-r from-green-500 to-green-400 p-4">
         <p>Current Due</p>
-        <p className="font-bold">₱0.00</p>
+        <p className="font-bold">₱{transaction.monthly_due}</p>
         <p className="">
-          Balance: <span>₱0.00</span>
+          Balance: <span>₱{transaction.last_balance}</span>
         </p>
       </div>
+          ))}
       <div className="flex flex-col justify-center items-center gap-4 p-4">
         <p className="text-gray-500 text-sm">PLEASE LINK ACCOUNT TO CONTINUE</p>
         <img src={Account} alt="" width={200} />
