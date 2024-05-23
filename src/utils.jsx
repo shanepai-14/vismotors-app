@@ -7,8 +7,8 @@ export const isAuthenticated = () => {
 };
 
 export const processEnv = process.env;
-export const BASE_URL = processEnv.REACT_APP_BASE_URL;
-export const IMAGE_URL = processEnv.REACT_APP_IMAGE_URL;
+export const BASE_URL = 'https://5c82-143-44-184-72.ngrok-free.app/api';
+export const IMAGE_URL = 'https://5c82-143-44-184-72.ngrok-free.app';
 
 export const userData = JSON.parse(localStorage.getItem('userData'));
 export const userProfile = JSON.parse(localStorage.getItem('userProfile'));
