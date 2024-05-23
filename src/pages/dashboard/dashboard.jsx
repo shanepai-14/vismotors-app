@@ -17,9 +17,16 @@ const fetchBalance = async (userId) => {
 };
 const dashboard = () => {
   const userId = userData?.id;
-  const { data, isLoading, error } = useQuery(userId ? ['fetchBalance', userId] : null,
-  userId ? () => fetchBalance(userId) : null, () =>
-    fetchBalance(userId)
+  const { data, isLoading, error } = useQuery(
+    userId ? ['fetchBalance', userId] : null,
+    () => fetchBalance(userId),
+    {
+      enabled: !!userId, // Only run the query if userId is available
+      onError: (error) => {
+        console.error(error);
+        window.location.reload();
+      },
+    }
   );
   console.log(userData.id);
   console.log(userData);
