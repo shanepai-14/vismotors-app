@@ -19,7 +19,7 @@ const fetchBalance = async (userId) => {
 const dashboard = () => {
  
   const location = useLocation();
-  const userID =location.state || userData?.id; 
+  const userID =location.state || undefined; 
   let userId  = userID.userID;
   if(userId === undefined){
     userId = userData.id;
