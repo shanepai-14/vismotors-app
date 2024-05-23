@@ -60,7 +60,7 @@ const login = () => {
           <div className='relative mt-14'>
           <img src={vismotor} alt="" width="60%" className='mx-auto'/>
            <h1
-        className="absolute top-[88%] right-[26%] block -mb-3 text-red-600 font-sans text-4xl  text-center antialiased font-semibold leading-relaxed tracking-normal ">
+        className="absolute top-[88%] left-1/2 -translate-x-1/2 block -mb-3 text-red-600 font-sans text-4xl  text-center antialiased font-semibold leading-relaxed tracking-normal ">
        VISMOTORS
       </h1>
           </div>
