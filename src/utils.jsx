@@ -6,7 +6,7 @@ export const isAuthenticated = () => {
   return token ? true : false;
 };
 
-export const processEnv = process.env;
+
 export const BASE_URL = 'https://caf2-143-44-184-72.ngrok-free.app/api';
 export const IMAGE_URL = 'https://caf2-143-44-184-72.ngrok-free.app';
 
