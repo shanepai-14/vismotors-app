@@ -22,13 +22,15 @@ const login = () => {
             password,
           });
     
+          const userID = response.data.user.id;
           localStorage.setItem('authToken', response.data.access_token);
           localStorage.setItem('userData', JSON.stringify(response.data.user));
           localStorage.setItem('userProfile', JSON.stringify(response.data.profile));
           console.log(response.data);
           
- 
-            navigate('/vismotors-app/dashboard');
+           console.log(userID);
+            // navigate('/vismotors-app/dashboard');
+            navigate('/vismotors-app/dashboard', { state: { userID } });
      
         } catch (err) {
           // Handle login error

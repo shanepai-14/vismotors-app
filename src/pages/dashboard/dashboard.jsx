@@ -3,6 +3,7 @@ import Account from "../../assets/account.svg";
 import { BASE_URL, formatCurrency } from "../../utils";
 import apiClient from "../../apiClient";
 import { useQuery } from "react-query";
+import { useLocation } from 'react-router-dom';
 
 const userData = JSON.parse(localStorage.getItem('userData')) || null;
  const userProfile = JSON.parse(localStorage.getItem("userProfile"));
@@ -16,7 +17,14 @@ const fetchBalance = async (userId) => {
   }
 };
 const dashboard = () => {
-  const userId = userData?.id;
+ 
+  const location = useLocation();
+  const userID =location.state || userData?.id; 
+  let userId  = userID.userID;
+  if(userId === undefined){
+    userId = userData.id;
+  }
+  console.log(userId);
   const { data, isLoading, error } = useQuery(
     userId ? ['fetchBalance', userId] : null,
     () => fetchBalance(userId),
@@ -39,7 +47,7 @@ const dashboard = () => {
             32323232asdasdada
           </p>
           <button
-      class="select-none rounded-lg py-1 px-2 text-center align-middle font-sans text-xs font-bold uppercase bg-slate-200  text-slate-200"
+      className="select-none rounded-lg py-1 px-2 text-center align-middle font-sans text-xs font-bold uppercase bg-slate-200  text-slate-200"
       type="button"
     >
      12312312
@@ -110,7 +118,7 @@ const dashboard = () => {
               {transaction.motor}
             </p>
             <button
-        class="select-none rounded-lg bg-amber-500 py-1 px-2 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-amber-500/20 transition-all hover:shadow-lg hover:shadow-amber-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        className="select-none rounded-lg bg-amber-500 py-1 px-2 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-amber-500/20 transition-all hover:shadow-lg hover:shadow-amber-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         type="button"
       >
         {transaction.status}
