@@ -24,7 +24,7 @@ const header = () => {
     localStorage.removeItem('userProfile');
 
     // Navigate to the login page
-    navigate('/');
+    navigate('/vismotors-app');
   };
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
