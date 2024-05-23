@@ -24,7 +24,7 @@ const login = () => {
           console.log(response.data);
           
  
-            navigate('/dashboard');
+            navigate('/vismotors-app/dashboard');
      
         } catch (err) {
           // Handle login error
