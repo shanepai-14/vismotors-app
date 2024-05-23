@@ -111,11 +111,23 @@ const dashboard = () => {
               {transaction.motor}
             </p>
             <button
-        className="select-none rounded-lg bg-amber-500 py-1 px-2 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-amber-500/20 transition-all hover:shadow-lg hover:shadow-amber-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        type="button"
-      >
-        {transaction.status}
-      </button>
+  className={`select-none rounded-lg py-1 px-2 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md ${
+    transaction.status === 'Active'
+      ? 'bg-green-500 shadow-green-500/20 hover:shadow-green-500/40'
+      : transaction.status === 'Approved'
+      ? 'bg-blue-500 shadow-blue-500/20 hover:shadow-blue-500/40'
+      : transaction.status === 'Inactive'
+      ? 'bg-gray-500 shadow-gray-500/20 hover:shadow-gray-500/40'
+      : transaction.status === 'Paid'
+      ? 'bg-green-600 shadow-green-600/20 hover:shadow-green-600/40'
+      : transaction.status === 'Unpaid'
+      ? 'bg-red-500 shadow-red-500/20 hover:shadow-red-500/40'
+      : 'bg-amber-500 shadow-amber-500/20 hover:shadow-amber-500/40'
+  } transition-all hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none`}
+  type="button"
+>
+  {transaction.status}
+</button>
            </div>
             <div className="flex justify-between items-center">
               <div>
