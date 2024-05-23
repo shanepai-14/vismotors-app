@@ -4,8 +4,8 @@ import { BASE_URL, formatCurrency } from "../../utils";
 import apiClient from "../../apiClient";
 import { useQuery } from "react-query";
 
-export const userData = JSON.parse(localStorage.getItem("userData"));
-export const userProfile = JSON.parse(localStorage.getItem("userProfile"));
+const userData = JSON.parse(localStorage.getItem('userData')) || null;
+ const userProfile = JSON.parse(localStorage.getItem("userProfile"));
 const fetchBalance = async (userId) => {
   try {
     const response = await apiClient.get(`/balance/${userId}`);
@@ -17,7 +17,8 @@ const fetchBalance = async (userId) => {
 };
 const dashboard = () => {
   const userId = userData?.id;
-  const { data, isLoading, error } = useQuery(["fetchBalance", userId], () =>
+  const { data, isLoading, error } = useQuery(userId ? ['fetchBalance', userId] : null,
+  userId ? () => fetchBalance(userId) : null, () =>
     fetchBalance(userId)
   );
   console.log(userData.id);

@@ -24,25 +24,25 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/dashboard',
+        path: '/vismotors-app/dashboard',
         
         element: <Dashboard />,
 
       },
       {
-        path: '/payment',
+        path: '/vismotors-app/payment',
         
         element: <Payment />,
 
       },
       {
-        path: '/contact',
+        path: '/vismotors-app/contact',
         
         element: <Contact />,
 
       },
       {
-        path: '/link',
+        path: '/vismotors-app/link',
         
         element: <Link/>,
 

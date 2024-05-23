@@ -164,7 +164,7 @@ const header = () => {
                 <div className="space-y-2 py-6">
                   <Link
                     onClick={toggleMenu}
-                    to="/dashboard"
+                    to="/vismotors-app/dashboard"
                     className={`-mx-3 flex items-center gap-2  group rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50  transition-all  ${
                       currentPath == "/dashboard"
                         ? "text-red-600 bg-gray-50"
@@ -183,7 +183,7 @@ const header = () => {
                   </Link>
                   <Link
                     onClick={toggleMenu}
-                    to="/payment"
+                    to="/vismotors-app/payment"
                     className={`-mx-3 flex items-center  gap-2 group rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50  transition-all ${
                       currentPath == "/payment"
                         ? "text-red-600 bg-gray-50"
@@ -201,7 +201,7 @@ const header = () => {
                   </Link>
                   <Link
                     onClick={toggleMenu}
-                    to="/contact"
+                    to="/vismotors-app/contact"
                     className={`-mx-3 flex items-center gap-2 group rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50  transition-all  ${
                       currentPath == "/contact"
                         ? "text-red-600 bg-gray-50"
@@ -220,7 +220,7 @@ const header = () => {
                   </Link>
                   <Link
                     onClick={toggleMenu}
-                    to="/link"
+                    to="/vismotors-app/link"
                     className={`-mx-3 flex items-center gap-2 group rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50  transition-all  ${
                       currentPath == "/link"
                         ? "text-red-600 bg-gray-50"
