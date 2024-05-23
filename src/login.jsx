@@ -49,7 +49,7 @@ const login = () => {
           }
       };
     return (
-        <div className='text-black bg-white w-screen h-screen'>
+        <div className='text-black bg-white w-screen '>
                <div
         ref={toastRef}
         className={`fixed top-5 left-4 z-50 rounded-lg bg-red-500 px-4 py-3 text-white transition-all duration-300 ${
