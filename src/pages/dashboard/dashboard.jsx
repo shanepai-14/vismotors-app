@@ -3,10 +3,7 @@ import Account from "../../assets/account.svg";
 import { BASE_URL, formatCurrency } from "../../utils";
 import apiClient from "../../apiClient";
 import { useQuery } from "react-query";
-import { useLocation } from 'react-router-dom';
-
-const userData = JSON.parse(localStorage.getItem('userData')) || null;
- const userProfile = JSON.parse(localStorage.getItem("userProfile"));
+import { useAuth } from '../../AuthContext';
 const fetchBalance = async (userId) => {
   try {
     const response = await apiClient.get(`/balance/${userId}`);
@@ -17,13 +14,9 @@ const fetchBalance = async (userId) => {
   }
 };
 const dashboard = () => {
- 
-  const location = useLocation();
-  const userID =location.state || undefined; 
-  let userId  = userID.userID;
-  if(userId === undefined){
-    userId = userData.id;
-  }
+  const { userData } = useAuth();
+  const userId = userData?.id;
+  
   console.log(userId);
   const { data, isLoading, error } = useQuery(
     userId ? ['fetchBalance', userId] : null,

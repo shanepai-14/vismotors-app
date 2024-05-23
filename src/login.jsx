@@ -3,7 +3,7 @@ import vismotor from '../public/vismotor.png'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from './utils';
-
+import { useAuth } from './AuthContext'; 
 const login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -11,6 +11,7 @@ const login = () => {
     const [isLoading, setIsLoading] = useState(false); 
     const [showToast, setShowToast] = useState(false);  
     const toastRef = useRef(null);
+    const { login } = useAuth(); 
     const navigate = useNavigate();
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -21,16 +22,16 @@ const login = () => {
             email,
             password,
           });
-    
+          login(response);
           const userID = response.data.user.id;
-          localStorage.setItem('authToken', response.data.access_token);
-          localStorage.setItem('userData', JSON.stringify(response.data.user));
-          localStorage.setItem('userProfile', JSON.stringify(response.data.profile));
+        //   localStorage.setItem('authToken', response.data.access_token);
+        //   localStorage.setItem('userData', JSON.stringify(response.data.user));
+        //   localStorage.setItem('userProfile', JSON.stringify(response.data.profile));
           console.log(response.data);
           
            console.log(userID);
             // navigate('/vismotors-app/dashboard');
-            navigate('/vismotors-app/dashboard', { state: { userID } });
+            navigate('/vismotors-app/dashboard');
      
         } catch (err) {
           // Handle login error

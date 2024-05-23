@@ -10,6 +10,7 @@ import Link from './pages/link/link.jsx';
 import ProtectedRoute from './ProtectedRoute';
 import Login from './login.jsx'
 import './index.css'
+import { AuthProvider } from './AuthContext';
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -56,13 +57,13 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
-   
+     <AuthProvider>
  <QueryClientProvider client={queryClient}>
 
    <RouterProvider router={router}/>
 
        </QueryClientProvider>
-      
+       </AuthProvider>
   </React.StrictMode>
 
 )
