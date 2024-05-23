@@ -14,7 +14,7 @@ const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     element: <Login/>,
-    path: '/',
+    path: '/vismotors-app',
   },
   {
     element: (
