@@ -9,7 +9,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
+  const [userProfile, setUserProfile] = useState(null);
   useEffect(() => {
     const storedUserData = localStorage.getItem('userData');
     if (storedUserData) {
@@ -20,8 +20,9 @@ export const AuthProvider = ({ children }) => {
 
   const login = (response) => {
     setUserData(response.data.user);
+    setUserProfile(response.data.profile);
     setIsAuthenticated(true);
-    localStorage.setItem('authToken', response.data.access_token);
+         localStorage.setItem('authToken', response.data.access_token);
           localStorage.setItem('userData', JSON.stringify(response.data.user));
           localStorage.setItem('userProfile', JSON.stringify(response.data.profile));
 
@@ -29,6 +30,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUserData(null);
+    setUserProfile(null);
     setIsAuthenticated(false);
     localStorage.removeItem('userData');
     localStorage.removeItem('authToken');
@@ -37,6 +39,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     userData,
     isAuthenticated,
+    userProfile,
     login,
     logout,
   };

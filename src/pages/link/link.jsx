@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Account from "../../assets/account.svg";
 import { PaperClipIcon } from '@heroicons/react/20/solid'
 import axios from 'axios';
-import { userData ,userProfile, BASE_URL,formatDate,getFilename,IMAGE_URL  } from "../../utils";
-
+import { BASE_URL,formatDate,getFilename,IMAGE_URL  } from "../../utils";
+import { useAuth } from '../../AuthContext';
 const createBlobUrl = async (fileUrl) => {
   try {
     const response = await fetch(fileUrl);
@@ -16,6 +16,7 @@ const createBlobUrl = async (fileUrl) => {
 };
 
 const link = () => {
+  const { userProfile , userData } = useAuth();
    const accountData = userData;
    const profileData = userProfile[0];
    
