@@ -22,7 +22,10 @@ const login = () => {
           localStorage.setItem('userData', JSON.stringify(response.data.user));
           localStorage.setItem('userProfile', JSON.stringify(response.data.profile));
           console.log(response.data);
-          navigate('/dashboard');
+          
+ 
+            navigate('/dashboard');
+     
         } catch (err) {
           // Handle login error
           setError('Invalid credentials');

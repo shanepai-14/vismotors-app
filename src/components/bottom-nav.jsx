@@ -9,7 +9,7 @@ const bottomNax = () => {
     <div className="bg-white fixed bottom-0 w-full  border-t border-gray-200 flex">
       <Link to='/dashboard'
   
-        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/dashboard/' ? 'text-green-500'  : 'text-gray-500'}  hover:text-green-500`}
+        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/dashboard' ? 'text-red-500'  : 'text-gray-500'}  hover:text-red-500`}
       >
         <div className="text-center">
           <span className="block h-8 text-3xl leading-8">
@@ -22,7 +22,7 @@ dashboard
       </Link>
       <Link
         to='/payment'
-        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/payment' ? 'text-green-500'  : 'text-gray-500'}  hover:text-green-500"`}
+        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/payment' ? 'text-red-500'  : 'text-gray-500'}  hover:text-red-500"`}
       >
         <div className="text-center">
           <span className="block h-8 text-3xl leading-8">
@@ -35,7 +35,7 @@ receipt_long
       </Link>
       <Link
         to='/contact'
-        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/contact' ? 'text-green-500'  : 'text-gray-500'} hover:text-green-500`}
+        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/contact' ? 'text-red-500'  : 'text-gray-500'} hover:text-red-500`}
       >
         <div className="text-center">
           <span className="block h-8 text-3xl leading-8">
@@ -48,7 +48,7 @@ feedback
       </Link>
       <Link
         to="/link"
-        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/link' ? 'text-green-500'  : 'text-gray-500'} hover:text-green-500`}
+        className={`flex flex-grow items-center justify-center p-2 ${currentPath == '/link' ? 'text-red-500'  : 'text-gray-500'} hover:text-red-500`}
       >
         <div className="text-center">
           <span className="block h-8 text-3xl leading-8">

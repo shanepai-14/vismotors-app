@@ -1,7 +1,7 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { userData ,userProfile, BASE_URL } from "../../utils";
+import { userData ,userProfile, BASE_URL,formatDate,formatCurrency } from "../../utils";
 import apiClient from '../../apiClient'
 import { useQuery } from 'react-query';
 
@@ -27,10 +27,22 @@ const payment = () => {
     return (
       
         <div className='text-black'>
-            <Accordion defaultActiveKey="0">
+            <Accordion defaultActiveKey="0" alwaysOpen>
             {data.map((transaction, index) => (     
-      <Accordion.Item eventKey={index} key={transaction.id}>
-        <Accordion.Header>{transaction.ref_no}</Accordion.Header>
+      <Accordion.Item eventKey={index} key={transaction.id} >
+        <Accordion.Header>
+        <div className='flex justify-between w-full items-center'>
+         <div >
+         <p className='block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900'>{transaction.motor}</p> 
+         <p className='block antialiased font-sans text-sm leading-normal text-gray-700 font-normal'>Contract number : {transaction.ref_no}</p>
+      
+         </div>
+         <div className='mr-3'>
+         <p className='block antialiased tracking-normal text-right font-sans text-base font-semibold leading-relaxed text-blue-gray-900'>Balance</p> 
+         <h2 className='block antialiased tracking-normal font-sans text-xl font-semibold leading-relaxed text-blue-gray-900 '>{formatCurrency(transaction.last_balance)}</h2>
+         </div>
+        </div>
+        </Accordion.Header>
         <Accordion.Body>
         <ul role="list" className="divide-y divide-gray-200">
         {transaction.payments.map((payment, index) => (   
@@ -43,8 +55,8 @@ const payment = () => {
       </div>
     </div>
     <div className="shrink-0 flex flex-col items-end">
-      <p className="text-sm leading-6 text-gray-900">{payment.amount}</p>
-      <p className="mt-1 text-xs leading-5 text-gray-500"><time dateTime="2023-01-23T13:23Z">{payment.created_at}</time></p>
+      <p className="text-sm leading-6 text-gray-900">{formatCurrency(payment.amount)}</p>
+      <p className="mt-1 text-xs leading-5 text-gray-500"><time dateTime="2023-01-23T13:23Z">{formatDate(payment.created_at) }</time></p>
     </div>
   </li>
     ))}
