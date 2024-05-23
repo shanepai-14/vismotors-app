@@ -4,9 +4,9 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import Vismotor from "../../public/vismotor.png"
 function tabName(currentPath) {
-  if (currentPath == "/payment") return "Payment History";
-  if (currentPath == "/contact") return "Contact Us";
-  if (currentPath == "/link") return "Profile";
+  if (currentPath == "/vismotors-app/payment") return "Payment History";
+  if (currentPath == "/vismotors-app/contact") return "Contact Us";
+  if (currentPath == "/vismotors-app/link") return "Profile";
 
   return "DASHBOARD";
 }
@@ -75,7 +75,7 @@ const header = () => {
             <Link
               to="/vismotors-app"
               className={`text-sm font-semibold leading-6 transition-all  ${
-                currentPath == "/" ? "text-red-600" : "text-white scale-105"
+                currentPath == "/vismotors-app" ? "text-red-600" : "text-white scale-105"
               }`}
             >
               Home
@@ -166,7 +166,7 @@ const header = () => {
                     onClick={toggleMenu}
                     to="/vismotors-app/dashboard"
                     className={`-mx-3 flex items-center gap-2  group rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50  transition-all  ${
-                      currentPath == "/dashboard"
+                      currentPath == "/vismotors-app/dashboard"
                         ? "text-red-600 bg-gray-50"
                         : "text-white  "
                     }`}
@@ -185,7 +185,7 @@ const header = () => {
                     onClick={toggleMenu}
                     to="/vismotors-app/payment"
                     className={`-mx-3 flex items-center  gap-2 group rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50  transition-all ${
-                      currentPath == "/payment"
+                      currentPath == "/vismotors-app/payment"
                         ? "text-red-600 bg-gray-50"
                         : "text-white "
                     }`}
@@ -203,7 +203,7 @@ const header = () => {
                     onClick={toggleMenu}
                     to="/vismotors-app/contact"
                     className={`-mx-3 flex items-center gap-2 group rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50  transition-all  ${
-                      currentPath == "/contact"
+                      currentPath == "/vismotors-app/contact"
                         ? "text-red-600 bg-gray-50"
                         : "text-white "
                     }`}
@@ -222,7 +222,7 @@ const header = () => {
                     onClick={toggleMenu}
                     to="/vismotors-app/link"
                     className={`-mx-3 flex items-center gap-2 group rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50  transition-all  ${
-                      currentPath == "/link"
+                      currentPath == "/vismotors-app/link"
                         ? "text-red-600 bg-gray-50"
                         : "text-white "
                     }`}
@@ -238,10 +238,10 @@ const header = () => {
                     <span className="block text-xs leading-none  group-hover:text-red-600 hover:text-red-600">Profile</span>
                   </Link>
                 </div>
-                <div className="py-6">
+                <div className="py-6 hover:text-red-600">
                   <a
                     href="#"
-                    className="-mx-3 flex items-center rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:text-red-600 hover:bg-gray-50 "
+                    className="-mx-3 flex items-center rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:text-red-600 hover:bg-gray-50"
                     onClick={handleLogout}
                  >
                     Logout
