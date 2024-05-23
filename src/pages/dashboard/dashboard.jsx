@@ -30,7 +30,7 @@ const dashboard = () => {
     }
   );
   console.log(userData.id);
-  console.log(userData);
+  console.log(data);
   if (isLoading) {
     return <div className="h-screen pt-4">
       <div  className="bg-gradient-to-r px-4 pb-4 animate-pulse">

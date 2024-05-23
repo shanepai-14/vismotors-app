@@ -8,7 +8,7 @@ export const isAuthenticated = () => {
 
 
 export const BASE_URL = 'https://caf2-143-44-184-72.ngrok-free.app/api';
-export const IMAGE_URL = 'https://caf2-143-44-184-72.ngrok-free.app';
+export const IMAGE_URL ='https://caf2-143-44-184-72.ngrok-free.app';
 
 export const userData = JSON.parse(localStorage.getItem('userData'));
 export const userProfile = JSON.parse(localStorage.getItem('userProfile'));
