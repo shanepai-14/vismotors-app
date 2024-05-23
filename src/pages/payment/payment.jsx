@@ -20,7 +20,30 @@ const payment = () => {
   
 
   if(isLoading){
-    return <div>Loading....</div>
+    return <div className='h-screen w-screen'>
+               <div className='flex justify-between w-full items-center p-4  animate-pulse bg-gray-300'>
+         <div >
+         <p className='block antialiased tracking-normal font-sans bg-slate-200 text-slate-200 rounded-md mb-2 text-base font-semibold leading-relaxed '>1231231231231231</p> 
+         <p className='block antialiased font-sans text-sm leading-normal bg-slate-200 text-slate-200 rounded-md font-normal'>Contract number : 12312</p>
+      
+         </div>
+         <div className='mr-3'>
+         <p className='block antialiased tracking-normal text-right font-sans text-base font-semibold leading-relaxed bg-slate-200 mb-1 text-slate-200 rounded-md'>Balance</p> 
+         <h2 className='block antialiased tracking-normal font-sans text-xl font-semibold leading-relaxed  bg-slate-200 text-slate-200 rounded-md'>12312312</h2>
+         </div>
+        </div>
+        <div className='flex justify-between w-full items-center p-4 mb-4 animate-pulse border-t-2 border-gray-400  bg-gray-300'>
+         <div >
+         <p className='block antialiased tracking-normal font-sans bg-slate-200 text-slate-200 rounded-md mb-2 text-base font-semibold leading-relaxed '>1231231231231231</p> 
+         <p className='block antialiased font-sans text-sm leading-normal bg-slate-200 text-slate-200 rounded-md font-normal'>Contract number : 12312</p>
+      
+         </div>
+         <div className='mr-3'>
+         <p className='block antialiased tracking-normal text-right font-sans text-base font-semibold leading-relaxed bg-slate-200 mb-1 text-slate-200 rounded-md'>Balance</p> 
+         <h2 className='block antialiased tracking-normal font-sans text-xl font-semibold leading-relaxed  bg-slate-200 text-slate-200 rounded-md'>12312312</h2>
+         </div>
+        </div>
+    </div>
   }
   
   console.log(data);

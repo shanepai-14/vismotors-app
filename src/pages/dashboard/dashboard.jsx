@@ -24,7 +24,73 @@ const dashboard = () => {
   console.log(userData.id);
   console.log(userData);
   if (isLoading) {
-    return <div>Loading....</div>;
+    return <div className="h-screen pt-4">
+      <div  className="bg-gradient-to-r px-4 pb-4 animate-pulse">
+        <div className="p-4 rounded-md border animate-pulse border-gray-300 shadow bg-gray-400 text-white ">
+         <div className="flex justify-between items-center flex-col">
+         <p className="block mb-2 font-sans text-xl antialiased rounded-md font-semibold leading-snug tracking-normal bg-slate-200  text-slate-200">
+            32323232asdasdada
+          </p>
+          <button
+      class="select-none rounded-lg py-1 px-2 text-center align-middle font-sans text-xs font-bold uppercase bg-slate-200  text-slate-200"
+      type="button"
+    >
+     12312312
+    </button>
+         </div>
+          <div className="flex justify-between items-center">
+            <div className="flex flex-col gap-2">
+              <p className="bg-slate-200 rounded-md text-slate-200">Current Due</p>
+              <p className="font-bold bg-slate-200 rounded-md text-slate-200">
+               12312321
+              </p>
+              <p className="bg-slate-200 rounded-md  text-slate-200">
+                Balance:{" "}
+                <span>12312</span>
+              </p>
+            </div>
+            <div className="text-right flex flex-col gap-2 ">
+              <p className="bg-slate-200 rounded-md text-slate-200">Contract</p>
+              <p className="bg-slate-200 rounded-md text-slate-200">23232</p>
+               <p className="bg-slate-200 rounded-md text-slate-200">223 23 of the month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="px-4 pt-4 rounded-t-custom-t bg-gradient-to-r shadow-md animate-pulse bg-gray-300 h-full">
+        <div className="text-gray-400 text-xs flex justify-center">
+          <span className="material-symbols-outlined text-white">
+            notifications
+          </span>
+          <p className="text-white">Notifications</p>
+        </div>
+        <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-lg   bg-clip-border rounded-xl w-full">
+          <div className="p-6">
+            <h5 className="block mb-2 font-sans text-xl bg-slate-200 text-slate-200 rounded-md antialiased font-semibold leading-snug tracking-normal ">
+              Dear Valued Customers,
+            </h5>
+            <p className="block font-sans bg-slate-200 text-slate-200 rounded-md text-base antialiased font-light leading-relaxed text-inherit">
+              As the year end we,appreciate your trust in Vismotor Corp and
+              Global Creditlending Corp. Reminding you that with December
+              31,2023 falling on a Sunday and branches closed on...
+            </p>
+          </div>
+          <div className="p-6 pt-0">
+            <a href="#" className="inline-block">
+              <button
+                className="flex items-center gap-2 px-4 py-2 font-sans text-xs font-bold text-center bg-slate-200 text-slate-200 rounded-md uppercase align-middle transition-all  select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+                type="button"
+              >
+                December 24,2024
+                <span className="material-symbols-outlined">
+                  calendar_month
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>;
   }
   console.log(data);
   return (
