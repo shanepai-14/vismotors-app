@@ -7,8 +7,8 @@ export const isAuthenticated = () => {
 };
 
 
-export const BASE_URL = 'http://vismotor.services/api';
-export const IMAGE_URL ='http://vismotor.services';
+export const BASE_URL = 'https://vismotor.services/api';
+export const IMAGE_URL ='https://vismotor.services';
 
 export const userData = JSON.parse(localStorage.getItem('userData'));
 export const userProfile = JSON.parse(localStorage.getItem('userProfile'));
