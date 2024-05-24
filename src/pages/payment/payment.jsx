@@ -1,10 +1,10 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { userData ,userProfile, BASE_URL,formatDate,formatCurrency } from "../../utils";
+import {  BASE_URL,formatDate,formatCurrency } from "../../utils";
 import apiClient from '../../apiClient'
 import { useQuery } from 'react-query';
-
+import { useAuth } from '../../AuthContext';
 const fetchPayments = async (userId) => {
   try {
     const response = await apiClient.get(`/payments/${userId}`);
@@ -15,6 +15,7 @@ const fetchPayments = async (userId) => {
   }
 };
 const payment = () => {
+  const { userData } = useAuth();
   const userId = userData?.id;
   const { data, isLoading, error } = useQuery(['fetchPayments', userId], () => fetchPayments(userId));
   
