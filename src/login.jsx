@@ -61,9 +61,9 @@ const login = () => {
             <div className='p-4'>
             <div className="relative flex flex-col text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
           <div className='relative mt-14'>
-          <img src={vismotor} alt="" width="60%" className='mx-auto'/>
+          <img src={vismotor} alt=""  className='mx-auto w-[60%] md:w-96'/>
            <h1
-        className="absolute top-[88%] left-1/2 -translate-x-1/2 block -mb-3 text-red-600 font-sans text-4xl  text-center antialiased font-semibold leading-relaxed tracking-normal ">
+        className="absolute top-[88%] md:top-[91%] left-1/2 -translate-x-1/2 block -mb-3 text-red-600 font-sans text-4xl md:text-5xl text-center antialiased font-semibold leading-relaxed tracking-normal ">
        VISMOTORS
       </h1>
           </div>
