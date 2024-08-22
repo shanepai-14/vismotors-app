@@ -24,7 +24,8 @@
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.23.1",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "vismotors-app": "file:"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
